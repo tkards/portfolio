@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who is Travis Kim?</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Meet Travis Kim</h1>
+        <nav>
+            <a href="index.html">Who is Travis?</a>
+            <a href="educator/educator.html">Educator</a>
+            <a href="magic/magic.html">Magician</a>
+        </nav>
+    </header>
+    <main>
+        <section class="intro">
+            <h2>Who is Travis Kim?</h2>
+            <div class="bio-container">
+                <div class="bio-image-wrapper">
+                    <img src="assets/travis jumping in a playful way.jpg" alt="Travis Kim jumping playfully" class="hero-image slide-in">
+                </div>
+                <div class="bio-text">
+                    <div class="bio-title">Educator &middot; Designer &middot; Magician</div>
+                                        <div class="bio-subtext">Where learning meets curiosity, clarity, and delight.</div>
+                    <p>Travis Kim is a passionate educator, creative learning designer, and professional magician. He brings energy, curiosity, and wonder to every classroom and stage, inspiring students and audiences alike.</p>
+                </div>
+            </div>
+        </section>
+        <section class="about">
+            <h3>About Travis</h3>
+            <ul>
+                <li>Educator & Learning Designer</li>
+                <li>Professional Magician</li>
+                <li>Passionate about inspiring and engaging audiences</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 Travis Kim</p>
+    </footer>
+<script>
+// Animate hero image slide-in on page load
+window.addEventListener('DOMContentLoaded', function() {
+    const hero = document.querySelector('.slide-in');
+    if (hero) {
+        hero.classList.add('slide-in-animate');
+    }
+});
+</script>
+</body>
+</html>
