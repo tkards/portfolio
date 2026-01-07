@@ -98,6 +98,41 @@ main {
     /* move title a bit toward the center */
     padding-right: 3rem;
 }
+
+.hero-name {
+    font-size: 5.2rem;
+    line-height: 0.98;
+    margin: 0 0 0.4rem 0;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+    position: relative;
+    z-index: 3;
+    color: inherit;
+    text-shadow: 0 22px 40px rgba(0,0,0,0.18);
+}
+.identity {
+    margin: 0 0 1rem 0;
+    font-size: 1.05rem;
+    color: inherit;
+    opacity: 0.95;
+}
+.lead {
+    font-size: 1.15rem;
+    color: inherit;
+    max-width: 60ch;
+    margin-bottom: 1.1rem;
+}
+.hero-ctas a {
+    color: inherit;
+    text-decoration: none;
+    margin-right: 1.6rem;
+    font-weight: 600;
+    opacity: 0.95;
+}
+.hero-ctas a:hover {
+    text-decoration: underline;
+}
 .intro .hero-media {
     display: flex;
     align-items: center;
@@ -210,5 +245,12 @@ footer {
     }
     .hero-copy h2 {
         font-size: 2.2rem;
+    }
+    .hero-name {
+        font-size: 2.4rem;
+        white-space: normal;
+    }
+    .lead {
+        font-size: 1rem;
     }
 }
