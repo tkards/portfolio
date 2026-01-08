@@ -9,7 +9,17 @@
 <body>
     <header>
         <h1>Travis Kim - Magician</h1>
-        <nav>
+        <button class="hamburger" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <nav class="main-nav">
+            <a href="../index.html">Who is Travis?</a>
+            <a href="../educator/educator.html">Educator</a>
+            <a href="magic.html">Magician</a>
+        </nav>
+        <nav id="mobile-nav" class="mobile-nav" hidden>
             <a href="../index.html">Who is Travis?</a>
             <a href="../educator/educator.html">Educator</a>
             <a href="magic.html">Magician</a>
@@ -19,8 +29,8 @@
         <section class="magic-intro">
             <h2>Magician Travis Kim</h2>
             <div class="magic-content">
-                <img src="../assets/magician headshot.jpg" alt="Magician headshot" class="magic-headshot">
                 <div class="magic-text">
+                    <img src="../assets/magician headshot.jpg" alt="Magician headshot" class="magic-headshot">
                     <p>In the fall of 2013, during my first quarter at UC Santa Barbara, my life took an unexpected turn. A skateboarding accident left me with a fractured skull and a mild traumatic brain injury. Along with persistent ringing in my right, I temporarily lost my sense of smell. At the time, I didn't know if it would ever return. I spent months recovering at home in San Jose, dealing with headaches, irritability, and the disorienting stillness that comes from having your plans abruptly paused. I remember thinking, in the middle of that uncertainty, that if the universe had placed me here for a reason, I hoped it would eventually make sense.</p>
                     <p>During those months away from school, I filled the time by watching movies. One evening, I watched the hit movie <em>Now You See Me</em>, and saw Jesse Eisenberg perform a card trick. It looked interesting enough for me to want to learn it. I went to YouTube, searched for a tutorial, and learned my first card trick. That single trick became a small but meaningful anchor. I showed it to friends over FaceTime, to my parents at home, and later to anyone who would watch once I returned to campus. For the first time since my injury, I felt a sense of momentum again.</p>
                     <p>I quickly discovered the problem with knowing only one trick: people figure it out. To keep the illusion alive, I had to learn more. What started as necessity turned into obsession. Over the next three years, I steadily built my skills, one shuffle and sleight at a time. By the summer of 2016, just before my final year at UCSB, I felt confident enough to call myself a magician (before that I was just a guy that knew a few card tricks). I began performing at student organization events and eventually partnered with an on-campus group called Life of the Party. They set up a hydration tent in Isla Vista's nightlife-heavy streets while I performed close-up street magic for partygoers. I had so much fun!</p>
@@ -44,5 +54,33 @@
     <footer>
         <p>&copy; 2026 Travis Kim</p>
     </footer>
+<script>
+// Hamburger menu toggle for mobile nav
+window.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger');
+    const mobileNav = document.getElementById('mobile-nav');
+    hamburger.addEventListener('click', function() {
+        const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+        hamburger.setAttribute('aria-expanded', !expanded);
+        if (!expanded) {
+            mobileNav.hidden = false;
+            setTimeout(() => mobileNav.classList.add('open'), 10);
+        } else {
+            mobileNav.classList.remove('open');
+            setTimeout(() => mobileNav.hidden = true, 300);
+        }
+        hamburger.classList.toggle('is-active');
+    });
+    // Close mobile nav on link click
+    mobileNav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.setAttribute('aria-expanded', false);
+            mobileNav.classList.remove('open');
+            setTimeout(() => mobileNav.hidden = true, 300);
+            hamburger.classList.remove('is-active');
+        });
+    });
+});
+</script>
 </body>
 </html>

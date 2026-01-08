@@ -9,7 +9,17 @@
 <body>
     <header>
         <h1>Travis Kim</h1>
-        <nav>
+        <button class="hamburger" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <nav class="main-nav">
+            <a href="index.html">Who is Travis?</a>
+            <a href="educator/educator.html">Educator</a>
+            <a href="magic/magic.html">Magician</a>
+        </nav>
+        <nav id="mobile-nav" class="mobile-nav" hidden>
             <a href="index.html">Who is Travis?</a>
             <a href="educator/educator.html">Educator</a>
             <a href="magic/magic.html">Magician</a>
@@ -48,6 +58,32 @@ window.addEventListener('DOMContentLoaded', function() {
     if (hero) {
         hero.classList.add('slide-in-animate');
     }
+
+    // Hamburger menu toggle
+    const hamburger = document.querySelector('.hamburger');
+    const mobileNav = document.getElementById('mobile-nav');
+    hamburger.addEventListener('click', function() {
+        const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+        hamburger.setAttribute('aria-expanded', !expanded);
+        if (!expanded) {
+            mobileNav.hidden = false;
+            setTimeout(() => mobileNav.classList.add('open'), 10);
+        } else {
+            mobileNav.classList.remove('open');
+            setTimeout(() => mobileNav.hidden = true, 300);
+        }
+        hamburger.classList.toggle('is-active');
+    });
+
+    // Close mobile nav on link click
+    mobileNav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.setAttribute('aria-expanded', false);
+            mobileNav.classList.remove('open');
+            setTimeout(() => mobileNav.hidden = true, 300);
+            hamburger.classList.remove('is-active');
+        });
+    });
 });
 </script>
 </body>
