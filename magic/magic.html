@@ -4,23 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Magician Portfolio - TKards</title>
-    <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="../style.css">
+        <!-- Removed page-specific nav.main-nav styles to unify nav bar across all pages -->
 </head>
 <body>
     <header>
-        <h1>Travis Kim - Magician</h1>
-        <button class="hamburger" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </button>
         <nav class="main-nav">
-            <a href="../index.html">Who is Travis?</a>
-            <a href="../educator/educator.html">Educator</a>
-            <a href="magic.html">Magician</a>
-        </nav>
-        <nav id="mobile-nav" class="mobile-nav" hidden>
-            <a href="../index.html">Who is Travis?</a>
+            <a href="../index.html">Home</a>
             <a href="../educator/educator.html">Educator</a>
             <a href="magic.html">Magician</a>
         </nav>
@@ -40,12 +30,12 @@
                         <figcaption class="magic-caption">Performing in the Close-Up Gallery at the Magic Castle</figcaption>
                     </figure>
                     <p>Today, magic is far more than a skill or a side pursuit. It's one of my deepest artistic expressions and a lens through which I understand growth, learning, and human connection. Magic taught me the value of consistent practice, the inevitability of mistakes, and the quiet power of showing up again and again with curiosity. I've carried those lessons into every part of my life, including my work with students and communities. What began as a coping mechanism during recovery became a lifelong craft, one that continues to shape how I see the world and how I choose to engage with it.</p>
+                    <section class="booking">
+                        <h3>Learn more about my magic</h3>
+                        <a href="https://tkards.com" target="_blank" rel="noopener">Visit tkards.com</a>
+                    </section>
                 </div>
             </div>
-        </section>
-        <section class="booking">
-            <h3>Learn more about my magic</h3>
-            <a href="https://tkards.com" target="_blank" rel="noopener">Visit tkards.com</a>
         </section>
         <section style="text-align: center; margin: 2rem auto;">
             <p><a href="../educator/educator.html">See how I bring magic into the classroom →</a></p>
@@ -55,32 +45,6 @@
         <p>&copy; 2026 Travis Kim</p>
     </footer>
 <script>
-// Hamburger menu toggle for mobile nav
-window.addEventListener('DOMContentLoaded', function() {
-    const hamburger = document.querySelector('.hamburger');
-    const mobileNav = document.getElementById('mobile-nav');
-    hamburger.addEventListener('click', function() {
-        const expanded = hamburger.getAttribute('aria-expanded') === 'true';
-        hamburger.setAttribute('aria-expanded', !expanded);
-        if (!expanded) {
-            mobileNav.hidden = false;
-            setTimeout(() => mobileNav.classList.add('open'), 10);
-        } else {
-            mobileNav.classList.remove('open');
-            setTimeout(() => mobileNav.hidden = true, 300);
-        }
-        hamburger.classList.toggle('is-active');
-    });
-    // Close mobile nav on link click
-    mobileNav.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.setAttribute('aria-expanded', false);
-            mobileNav.classList.remove('open');
-            setTimeout(() => mobileNav.hidden = true, 300);
-            hamburger.classList.remove('is-active');
-        });
-    });
-});
 </script>
 </body>
 </html>
