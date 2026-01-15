@@ -38,7 +38,7 @@ body {
 header {
     background: #fff;
     color: inherit;
-    padding: 1.2rem 2rem;
+    padding: 1.2rem 0.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
