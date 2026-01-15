@@ -833,9 +833,7 @@ footer {
     .hamburger {
         display: flex;
     }
-    nav.main-nav {
-        display: none;
-    }
+    /* nav.main-nav remains visible on mobile */
 }
 
 @media (max-width: 600px) {
