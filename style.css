@@ -1,3 +1,17 @@
+/* Align Magic Castle Close-Up Gallery photo to the left */
+.magic-figure {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 2rem 0;
+}
+.magic-agt-image {
+    float: left;
+    margin-right: 1.5rem;
+    max-width: 350px;
+    height: auto;
+}
 /* Remove extra space above 'Learn more about my magic' on magic page */
 .booking {
     margin-top: 0 !important;
@@ -538,9 +552,9 @@ footer {
 }
 
 .magic-figure {
-    float: right;
-    margin: 0 0 1.5rem 2rem;
-    max-width: 437px;
+    display: block;
+    margin: 0 2rem 1.5rem 0;
+    max-width: 350px;
 }
 
 .magic-agt-image {
